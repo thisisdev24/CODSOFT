@@ -14,14 +14,14 @@ public class NumberGame {
     }
 
     void userGuess() {
-        System.out.println("You have 7 attempts in total. \nEnter your guess: ");
+        System.out.println("Enter your guess: ");
         guess = input.nextInt();
         attempts++;
         if(attempts > 7) {
             System.out.println("Uh-oh! Out of attempts.");
             System.out.print("Restart Game? Y|N: \n");
-            String restart = input.nextLine();
-            if(restart.equals("Y")) {
+            char restart = input.next().charAt(0);
+            if(restart == 'Y') {
                 generateRandom();
             } else {
                 System.exit(0);
@@ -32,6 +32,7 @@ public class NumberGame {
 
     void generateRandom() {
         System.out.println("New Number Generated!");
+        System.out.println("You have 7 attempts in total.");
         r_number = new Random().nextInt(100) + 1;
         userGuess();
     }
@@ -40,9 +41,9 @@ public class NumberGame {
         if(r_number == guess) {
             System.out.println("Correct!");
             System.out.print("Play again? Y|N: \n");
-            String repeat = input.nextLine();
-            if(repeat.equals("Y")) {
-                userGuess();
+            char restart = input.next().charAt(0);
+            if(restart == 'Y') {
+                generateRandom();
             } else {
                 System.exit(0);
             }
@@ -56,6 +57,7 @@ public class NumberGame {
     }
 
     public static void main(String... args) {
-
+        NumberGame ng = new NumberGame();
+        ng.generateRandom();
     }
 }
