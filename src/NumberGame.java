@@ -32,6 +32,7 @@ public class NumberGame {
     }
 
     void generateRandom() {
+        guessAttempts = 0;
         System.out.println("New Number Generated!");
         System.out.println("You have 7 attempts in total.");
         r_number = new Random().nextInt(100) + 1;
