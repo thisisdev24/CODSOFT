@@ -3,21 +3,22 @@ import java.util.Random;
 
 public class NumberGame {
 
-    private int r_number, guess, attempts;
+    private int r_number, guess, guessAttempts, score, attempts;
     Scanner input;
 
     NumberGame() {
         r_number = 0;
         guess = 0;
         attempts = 0;
+        score = 0;
         input = new Scanner(System.in);
     }
 
     void userGuess() {
         System.out.println("Enter your guess: ");
         guess = input.nextInt();
-        attempts++;
-        if(attempts > 7) {
+        guessAttempts++;
+        if(guessAttempts > 7) {
             System.out.println("Uh-oh! Out of attempts.");
             System.out.print("Restart Game? Y|N: \n");
             char restart = input.next().charAt(0);
@@ -34,12 +35,15 @@ public class NumberGame {
         System.out.println("New Number Generated!");
         System.out.println("You have 7 attempts in total.");
         r_number = new Random().nextInt(100) + 1;
+        attempts++;
         userGuess();
     }
 
     void checkGuess() {
         if(r_number == guess) {
             System.out.println("Correct!");
+            score++;
+            System.out.println("Final Score: " + score + "/" + attempts);
             System.out.print("Play again? Y|N: \n");
             char restart = input.next().charAt(0);
             if(restart == 'Y') {
