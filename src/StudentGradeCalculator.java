@@ -15,13 +15,13 @@ public class StudentGradeCalculator {
         System.out.println("Enter marks obtained (out of 100) in each subject.");
         System.out.print("Mathematics: ");
         math = sc.nextInt();
-        System.out.print("\n\nPhysics: ");
+        System.out.print("\nPhysics: ");
         physx = sc.nextInt();
-        System.out.print("\n\nChemistry: ");
+        System.out.print("\nChemistry: ");
         chem = sc.nextInt();
-        System.out.print("\n\nEnglish: ");
+        System.out.print("\nEnglish: ");
         english = sc.nextInt();
-        System.out.print("\n\nHindi: ");
+        System.out.print("\nHindi: ");
         hindi = sc.nextInt();
     }
 
