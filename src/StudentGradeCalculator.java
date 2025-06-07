@@ -2,8 +2,13 @@ import java.util.Scanner;
 
 public class StudentGradeCalculator {
 
-    private int n_subs = 5;
+    private int n_subs;
     private int math, physx, chem, english, hindi;
+
+    StudentGradeCalculator() {
+        math = physx = chem = english = hindi = 0;
+        n_subs = 5;
+    }
 
     void marksInput() {
         Scanner sc = new Scanner(System.in);
@@ -28,9 +33,7 @@ public class StudentGradeCalculator {
         return (float) total() / n_subs;
     }
 
-    String gradeAssignment() {
-        float percentage = avgPercentage();
-
+    String gradeAssignment(float percentage) {
         if(percentage >= 85.00) {
             return "A";
         } else if (percentage >= 75.00 && percentage < 85.00) {
@@ -44,5 +47,14 @@ public class StudentGradeCalculator {
         } else {
             return "F";
         }
+    }
+
+    public static void main(String... args) {
+        StudentGradeCalculator sgc = new StudentGradeCalculator();
+        sgc.marksInput();
+        System.out.println("\nTotal Marks obtained: " + sgc.total());
+        float percentage = sgc.avgPercentage();
+        System.out.println("\nAverage Percentage: " + percentage);
+        System.out.println("\nYour grade: " + sgc.gradeAssignment(percentage));
     }
 }
