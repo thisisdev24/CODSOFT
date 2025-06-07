@@ -19,5 +19,9 @@ public class StudentGradeCalculator {
         hindi = sc.nextInt();
     }
 
+    int total() {
+        return math + physx + chem + english + hindi;
+    }
+
 
 }
