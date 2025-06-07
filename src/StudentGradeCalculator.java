@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class StudentGradeCalculator {
 
+    private int n_subs = 5;
     private int math, physx, chem, english, hindi;
 
     void marksInput() {
@@ -23,5 +24,7 @@ public class StudentGradeCalculator {
         return math + physx + chem + english + hindi;
     }
 
-
+    float avgPercentage() {
+        return (float) total() / n_subs;
+    }
 }
