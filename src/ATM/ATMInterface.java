@@ -31,7 +31,7 @@ public class ATMInterface extends BankAccount {
         System.out.print("\nEnter your choice: ");
         short choice = sc.nextShort();
 
-        double amount = 0;
+        double amount;
         switch (choice) {
             case 1 -> {
                 System.out.print("\nEnter amount (in $): ");
