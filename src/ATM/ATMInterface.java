@@ -1,8 +1,6 @@
 package ATM;
 
-public class ATMInterface {
-
-    private double balance;
+public class ATMInterface extends BankAccount {
 
     void withdraw(double amount) {
         if(balance >= amount) {
